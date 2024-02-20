@@ -28,6 +28,9 @@ include $(GENIE)/src/make/Make.std-package-targets
 # Only need these here ... not in every package
 
 ifeq ($(strip $(GOPT_ENABLE_INCL)),YES)
+ $(info INCL_DFLAGS $(INCL_DFLAGS))
+ $(info INCL_INCLUDES $(INCL_INCLUDES))
+ $(info INCL_LIBRARIES $(INCL_LIBRARIES))
   # extra flags, include paths, and libraries to link to
   CXXFLAGS               += $(INCL_DFLAGS)
   CPP_INCLUDES           += $(INCL_INCLUDES)

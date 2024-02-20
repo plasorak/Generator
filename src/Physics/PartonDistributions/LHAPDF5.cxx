@@ -2,7 +2,7 @@
 /*
  Copyright (c) 2003-2023, The GENIE Collaboration
  For the full text of the license visit http://copyright.genie-mc.org
- 
+
  Costas Andreopoulos <constantinos.andreopoulos \at cern.ch>
  University of Liverpool & STFC Rutherford Appleton Laboratory
 */
@@ -83,7 +83,7 @@ void LHAPDF5::SetPDFSetFromConfig(void) const
 
   LHAPDF::SetType stype = (type==0) ? LHAPDF::LHPDF :  LHAPDF::LHGRID;
 
-  LHAPDF::initPDFByName(name, stype, memset);
+  LHAPDF::initPDFSetByName(name, stype, memset);
   LHAPDF::extrapolate(false);
 #endif
 }

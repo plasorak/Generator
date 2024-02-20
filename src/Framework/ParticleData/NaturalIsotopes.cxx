@@ -112,17 +112,17 @@ const NaturalIsotopeElementData *
   map<int, vector<NaturalIsotopeElementData*> >::const_iterator miter;
 
   if( (miter=fNaturalIsotopesTable.find(Z)) == fNaturalIsotopesTable.end()) {
-    LOG("NatIsotop", pWARN)  
+    LOG("NatIsotop", pWARN)
        << "Table has no elements for natural isotope  Z = " << Z;
     return 0;
   }
-  
+
   vector<NaturalIsotopeElementData*> vec = miter->second;
-  for (int i; i<vec.size(); i++) {
+  for (int i=0; i<vec.size(); i++) {
     if (vec[i]->PdgCode()==pdgcode) return vec[i];
   }
 
-  LOG("NatIsotop", pWARN) 
+  LOG("NatIsotop", pWARN)
     << "Natural isotope Z = " << Z << " has " << vec.size() << " elements"
     << " (pdgcode = " << pdgcode << " was requested)";
   return 0;
